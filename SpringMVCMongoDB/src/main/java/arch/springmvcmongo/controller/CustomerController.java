@@ -28,6 +28,7 @@ public class CustomerController {
 
 	@RequestMapping(value = "/customer/save", method = RequestMethod.POST)
 	public View createCustomer(@ModelAttribute Customer customer, ModelMap model) {
+		System.out.println("Creating customer" + customer.getName());
 		if (StringUtils.hasText(customer.getId())) {
 			customerService.updateCustomer(customer);
 		} else {

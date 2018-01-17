@@ -17,7 +17,6 @@ public class CustomerDAOImpl implements CustomerDAO{
 	public static final String COLLECTION_NAME = "customer";
 
 	public void addCustomer(Customer customer) {
-		System.out.println("Verifying");
 		if (!mongoTemplate.collectionExists(Customer.class)) {
 			mongoTemplate.createCollection(Customer.class);
 		}
